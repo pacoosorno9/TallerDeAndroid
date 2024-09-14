@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
 import com.example.heroesapp.adapters.CategoryAdapter
-import com.example.heroesapp.adapters.FoodAdapter
+import com.example.heroesapp.adapters.HeroeAdapter
 import com.example.heroesapp.adapters.RestaurantAdapter
 import com.example.heroesapp.models.Category
-import com.example.heroesapp.models.Food
+import com.example.heroesapp.models.Heroe
 import com.example.heroesapp.models.Restaurant
 import com.example.heroesapp.models.User
 
@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var logoutBtn : ImageView
     lateinit var categoryRecyclerView : RecyclerView
     lateinit var restaurantRecyclerView: RecyclerView
-    lateinit var foodRecyclerView: RecyclerView
+    lateinit var heroeRecyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         logoutBtn = findViewById(R.id.logoutBtn)
         categoryRecyclerView = findViewById(R.id.category_recycleview)
         restaurantRecyclerView = findViewById(R.id.restaurants_recyclerview)
-        foodRecyclerView = findViewById(R.id.best_food_recycleview)
+        heroeRecyclerView = findViewById(R.id.best_heroe_recycleview)
         categoryRecyclerView.adapter = CategoryAdapter(Category.categories)
         categoryRecyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.HORIZONTAL,false)
@@ -52,12 +52,12 @@ class HomeActivity : AppCompatActivity() {
         restaurantRecyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.HORIZONTAL,false)
 
-        foodRecyclerView.adapter = FoodAdapter(Food.foods){ food: Food ->
-            val intent = Intent(this@HomeActivity,FoodDetailsActivity::class.java)
-            intent.putExtra("foodId",food.id)
+        heroeRecyclerView.adapter = HeroeAdapter(Heroe.heroes){ heroe: Heroe ->
+            val intent = Intent(this@HomeActivity,HeroeDetailsActivity::class.java)
+            intent.putExtra("heroeId",heroe.id)
             startActivity(intent)
         }
-        foodRecyclerView.layoutManager = GridLayoutManager(this,2)
+        heroeRecyclerView.layoutManager = GridLayoutManager(this,2)
 
         val user = User.users[1]
         usernameTV.text = user.computedName

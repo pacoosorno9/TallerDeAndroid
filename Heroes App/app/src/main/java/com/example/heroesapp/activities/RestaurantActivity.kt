@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.R
 import com.example.heroesapp.adapters.FoodAdapter
-import com.example.heroesapp.models.Food
 import com.example.heroesapp.models.Restaurant
 
 class RestaurantActivity : AppCompatActivity() {

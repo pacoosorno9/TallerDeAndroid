@@ -10,28 +10,31 @@ data class Heroe(
     val peliculaId : Int
 ){
     val computedPrice : String get() = "$$price"
-
+/*
+ES ALGO PARECIDO A LO DE RESTAURANTES SOLO QUE YO LO CAMBIE POR PELICULAS, ES DECIR QUE LOS HEROES
+SE GUARDAN O ESTAN EN LA PELICULA. ALGO COMO COMIDA Y RESTAURANTES.
+ */
     companion object {
         val heroes = mutableListOf<Heroe>(
             // Avengers
-            Heroe(1, "", 99.8, "Una hamburguesa a la parrilla con tomate, lechuga, mayonesa, ketchup y pepinillos en un suave pan con semillas de sésamo.", "https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.latam/files/BK_Web_WHOPPER_500X540px.png", 4.5, 1),
-            Heroe(2, "Chicken Fries", 59.8, "Tiras de pollo empanizadas en forma de papas fritas, servidas con tu elección de salsas.", "https://www.whopper.ie/wp-content/uploads/2021/04/Chicken_Fries_-1200x800_DE-1.png", 4.3, 1),
+            Heroe(1, "Black Widow", 99.8, "**Black Widow** es una ex espía rusa experta en combate que se une a los Avengers para redimirse.", "https://static.wikia.nocookie.net/disney/images/7/7a/Avengers_infinity_war_black_widow.png/revision/latest?cb=20190427185954&path-prefix=es", 4.3, 1),
+            Heroe(2, "Doctor Strange", 95.59, "**Doctor Strange** es un ex cirujano convertido en el Hechicero Supremo, maestro de las artes místicas y la magia.", "https://tooys.mx/media/catalog/product/cache/39c7ff5a74bd9fa282a021db605b774d/d/o/doctor-strange-spiderman-no-way-home-por-hot-toys-18.png", 4.9, 1),
 
-            // McDonald's
-            Heroe(3, "Big Mac", 79.8, "Dos hamburguesas de res, salsa especial, lechuga, queso, pepinillos, cebollas en un pan con semillas de sésamo.", "https://i.pinimg.com/originals/38/7a/0d/387a0d5aceb27c67f56309b06ea78f3b.png", 4.6, 2),
-            Heroe(4, "McFlurry", 49.8, "Helado suave con tu elección de ingredientes mezclados a la perfección.", "https://i.pinimg.com/originals/4e/43/26/4e4326fcd0792fe52bf7cc26dd4e8b76.png", 4.7, 2),
+            // Batman VS Superman
+            Heroe(3, "Bat-Man", 79.8, "Batman es un vigilante de Gotham, un detective y experto en combate sin poderes que lucha usando tecnología.""https://cdn.multiversus.com/roster/batman/batman-lg.webp", 4.6, 2),
+            Heroe(4, "Super-Man", 49.8, "Superman es un superhéroe extraterrestre de Krypton con fuerza, vuelo y poderes sobrehumanos, defensor de la justicia.", "https://static.wikia.nocookie.net/allficcion/images/4/40/Kal_Kent.png/revision/latest?cb=20160518215506&path-prefix=es", 4.7, 2),
 
-            // KFC
-            Heroe(5, "Pollo Original Recipe", 119.8, "Piezas clásicas de pollo jugoso sazonadas con la receta original de KFC.", "https://www.pngmart.com/files/16/Crunchy-KFC-Chicken-PNG-Clipart.png", 4.4, 3),
-            Heroe(6, "Famous Bowl", 99.8, "Puré de papas, maíz dulce, pollo crujiente y salsa gravy, cubierto con queso.", "https://plaza.delivery/uploads/productos/f5a5f3448bae3d4375999af3b77dd94e.png", 4.2, 3),
+            // Guardianes De La Galaxia
+            Heroe(5, "Rocket Racoon", 119.8, "Rocket Raccoon es un genio en tácticas y armas, un mapache modificado que es miembro de los Guardianes de la Galaxia.", "https://static.wikia.nocookie.net/marvelvscapcomespaol/images/8/85/RocketRaccoon-MvCI.png/revision/latest?cb=20170902222429&path-prefix=es", 4.4, 3),
+            Heroe(6, "Groot", 99.8, "Groot es un ser arbóreo con habilidades regenerativas, compañero de Rocket, que solo dice \"I am Groot\".", "https://tooys.mx/media/catalog/product/cache/39c7ff5a74bd9fa282a021db605b774d/g/r/groot-deluxe-im-groot-marvel-hot-toys-19.png", 4.2, 3),
 
-            // Pizza Hut
-            Heroe(7, "Pizza de Pepperoni", 159.8, "Pizza clásica de pepperoni con queso mozzarella sobre una corteza tradicional de Pizza Hut.", "https://png.pngtree.com/png-clipart/20230928/original/pngtree-pepperoni-pizza-isolated-with-clipping-path-png-image_13007895.png", 4.5, 4),
-            Heroe(8, "Pizza con Orilla Rellena de Queso", 199.8, "Una pizza grande con orilla rellena de queso fundido.", "https://png.pngtree.com/png-clipart/20230928/original/pngtree-pepperoni-pizza-isolated-with-clipping-path-png-image_13007895.png", 4.6, 4),
+            // La Liga De La Jusricia
+            Heroe(7, "Mujer Maravilla", 159.8, "Wonder Woman es una guerrera amazona con fuerza sobrehumana, habilidades de combate y armas míticas como el Lazo de la Verdad.", "https:/ /cdn.multiversus.com/roster/wonder-woman/wonder-woman-lg.webp", 4.5, 4),
+            Heroe(8, "Flash", 199.8, "Flash es el hombre más rápido del mundo, capaz de moverse a velocidades increíbles y manipular el tiempo.", "https://upload.wikimedia.org/wikipedia/en/b/b7/Flash_%28Barry_Allen%29.png", 4.6, 4),
 
-            // Subway
-            Heroe(9, "Italian B.M.T.", 129.8, "Salami de Génova, pepperoni picante y jamón de la Selva Negra con tu elección de verduras frescas y condimentos en pan recién horneado.", "https://png.pngtree.com/png-clipart/20230421/original/pngtree-italian-bmt-and-cola-subway-package-meal-picture-image_9118978.png", 4.7, 5),
-            Heroe(10, "Meatball Marinara", 119.8, "Albóndigas al estilo italiano en salsa marinara, servidas en pan recién horneado con tu elección de verduras y condimentos.", "https://129757024.cdn6.editmysite.com/uploads/1/2/9/7/129757024/s841251545676646705_p8_i1_w400.png", 4.5, 5),
+            // Civil war
+            Heroe(9, "Capitan-America", 129.8, "Capitán América es un supersoldado patriota con fuerza mejorada y un escudo indestructible, líder de los Avengers.", "https://static.wikia.nocookie.net/marvelvscapcomespaol/images/c/ca/Captain-america-MvCI.png/revision/latest?cb=20170826202042&path-prefix=es", 4.7, 5),
+            Heroe(10, "Tony Stark", 119.8, "Tony Stark (Iron Man) es un genio multimillonario que usa un traje de alta tecnología para luchar como Iron Man.", "https://i.pinimg.com/originals/f8/47/55/f847557cf93947d9027f189d9d243334.png", 4.5, 5),
         )
     }
 }

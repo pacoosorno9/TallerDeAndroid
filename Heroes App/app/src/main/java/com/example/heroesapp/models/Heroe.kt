@@ -7,7 +7,7 @@ data class Heroe(
     val description: String,
     val image : String,
     val rating : Double,
-    val peliculaId : Int
+    val movieId : Int
 ){
     val computedPrice : String get() = "$$price"
 /*
@@ -21,7 +21,7 @@ SE GUARDAN O ESTAN EN LA PELICULA. ALGO COMO COMIDA Y RESTAURANTES.
             Heroe(2, "Doctor Strange", 95.59, "**Doctor Strange** es un ex cirujano convertido en el Hechicero Supremo, maestro de las artes místicas y la magia.", "https://tooys.mx/media/catalog/product/cache/39c7ff5a74bd9fa282a021db605b774d/d/o/doctor-strange-spiderman-no-way-home-por-hot-toys-18.png", 4.9, 1),
 
             // Batman VS Superman
-            Heroe(3, "Bat-Man", 79.8, "Batman es un vigilante de Gotham, un detective y experto en combate sin poderes que lucha usando tecnología.""https://cdn.multiversus.com/roster/batman/batman-lg.webp", 4.6, 2),
+            Heroe(3, "Bat-Man", 79.8, "Batman es un vigilante de Gotham, un detective y experto en combate sin poderes que lucha usando tecnología.","https://cdn.multiversus.com/roster/batman/batman-lg.webp", 4.6, 2),
             Heroe(4, "Super-Man", 49.8, "Superman es un superhéroe extraterrestre de Krypton con fuerza, vuelo y poderes sobrehumanos, defensor de la justicia.", "https://static.wikia.nocookie.net/allficcion/images/4/40/Kal_Kent.png/revision/latest?cb=20160518215506&path-prefix=es", 4.7, 2),
 
             // Guardianes De La Galaxia

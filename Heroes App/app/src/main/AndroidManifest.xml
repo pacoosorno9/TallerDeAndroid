@@ -18,7 +18,7 @@
             android:name=".activities.HeroeDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.RestaurantActivity"
+            android:name=".activities.MovieActivity"
             android:exported="false" />
         <activity
             android:name=".activities.HomeActivity"
@@ -26,6 +26,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

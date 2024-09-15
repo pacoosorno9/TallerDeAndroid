@@ -80,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/categoryTV"
             app:layout_constraintVertical_bias="0.0" />
         <TextView
-            android:id="@+id/best_restaurantsTV"
+            android:id="@+id/best_moviesTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/best_heroes"
@@ -94,14 +94,14 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/restaurants_recyclerview"
+            android:id="@+id/moviess_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/best_restaurantsTV"
+            app:layout_constraintTop_toBottomOf="@+id/best_moviesTV"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -115,7 +115,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/restaurants_recyclerview"
+            app:layout_constraintTop_toBottomOf="@+id/movies_recyclerview"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.recyclerview.widget.RecyclerView

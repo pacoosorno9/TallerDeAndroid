@@ -10,7 +10,6 @@
         android:id="@+id/movie_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/burger"
         android:layout_gravity="center"
         />
     <TextView

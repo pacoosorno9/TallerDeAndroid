@@ -29,7 +29,7 @@ SE GUARDAN O ESTAN EN LA PELICULA. ALGO COMO COMIDA Y RESTAURANTES.
             Heroe(6, "Groot", 99.8, "Groot es un ser arbóreo con habilidades regenerativas, compañero de Rocket, que solo dice \"I am Groot\".", "https://tooys.mx/media/catalog/product/cache/39c7ff5a74bd9fa282a021db605b774d/g/r/groot-deluxe-im-groot-marvel-hot-toys-19.png", 4.2, 3),
 
             // La Liga De La Jusricia
-            Heroe(7, "Mujer Maravilla", 159.8, "Wonder Woman es una guerrera amazona con fuerza sobrehumana, habilidades de combate y armas míticas como el Lazo de la Verdad.", "https:/ /cdn.multiversus.com/roster/wonder-woman/wonder-woman-lg.webp", 4.5, 4),
+            Heroe(7, "Mujer Maravilla", 159.8, "Wonder Woman es una guerrera amazona con fuerza sobrehumana, habilidades de combate y armas míticas como el Lazo de la Verdad.", "https://cdn.multiversus.com/roster/wonder-woman/wonder-woman-lg.webp", 4.5, 4),
             Heroe(8, "Flash", 199.8, "Flash es el hombre más rápido del mundo, capaz de moverse a velocidades increíbles y manipular el tiempo.", "https://upload.wikimedia.org/wikipedia/en/b/b7/Flash_%28Barry_Allen%29.png", 4.6, 4),
 
             // Civil war

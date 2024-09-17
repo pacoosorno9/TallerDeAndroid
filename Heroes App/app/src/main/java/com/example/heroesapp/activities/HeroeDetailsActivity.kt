@@ -26,7 +26,7 @@ class HeroeDetailsActivity : AppCompatActivity() {
         heroePriceTextView = findViewById(R.id.heroe_price)
         heroeDecriptionTextView = findViewById(R.id.heroe_description)
         heroeRatingTextView = findViewById(R.id.heroe_rating)
-        val heroeId = intent.getIntExtra("heroe",0)
+        val heroeId = intent.getIntExtra("heroeId",0)
 
         val heroe = Heroe.heroes.firstOrNull { heroe: Heroe ->
             heroe.id == heroeId

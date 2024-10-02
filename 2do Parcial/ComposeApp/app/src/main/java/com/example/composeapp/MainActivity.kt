@@ -13,13 +13,23 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsEndWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,10 +37,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.input.pointer.motionEventSpy
+import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.composeapp.ui.components.MyListItem
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,7 +55,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()){
-                    MyRow()
+                    MyBox()
                 }
             }
         }
@@ -118,19 +132,86 @@ fun MyBox(){
         contentAlignment = Alignment.Center
     ){
         Box(
-            modifier = Modifier.background(Color.Cyan)
+            modifier = Modifier
+                .clip(CircleShape)
+                .background(Color.Cyan)
                 .width(200.dp)
-                .clip(RoundedCornerShape(10.dp))
                 .height(200.dp),
             contentAlignment = Alignment.Center
         ){
             Text("Hola a todos")
         }
-
     }
-
-
 }
+
+@Composable
+fun MyComplexLayout() {
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        //1. BOX
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.333f)
+                .background(Color.Cyan)
+        )
+
+        //2. ROW
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.333f)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(0.5f)
+                    .background(Color.Yellow),
+                    contentAlignment = Alignment.BottomEnd
+            ) {
+                Text("Hola a todos")
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(0.5f)
+                    .background(Color.Green),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Hola a todos")
+            }
+
+        }
+
+        //3. BOX
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.333f)
+                .background(Color.Magenta)
+        )
+    }
+}
+
+@Composable
+fun MyList() {
+    val foodList = listOf("Hamburguesa", "Papas", "Tacos", "Sushi", "Ensalda", "Pozole")
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(10.dp)
+    ) {
+        items(foodList) { food ->
+            MyListItem(food = food )
+            Spacer(modifier = Modifier.height(10.dp))
+        }
+    }
+}
+
+
 
 @Preview(
     showBackground = true,
@@ -140,7 +221,7 @@ fun MyBox(){
 @Composable
 fun GreetingPreview() {
     ComposeAppTheme {
-        MyBox()
+        MyList()
 
     }
 }

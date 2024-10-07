@@ -342,10 +342,36 @@ fun MyHomework() {
 
 }
 
+//@Composable
+//fun MyList() {
+//    val foodList = listOf("Hamburguesa", "Papas", "Tacos", "Sushi", "Ensalda", "Pozole")
+//
+//    LazyColumn(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .padding(10.dp)
+//    ) {
+//        items(foodList) { food ->
+//            MyListItem(food = food )
+//            Spacer(modifier = Modifier.height(10.dp))
+//        }
+//    }
+//}
+
 @Composable
 fun MyList() {
-    // Implementa la lista aquí
-    Text(text = "Elemento de la lista")
+    val foodList = listOf("Hamburguesa", "Pizza")
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(10.dp)
+    ){
+        items(foodList) { food ->
+            MyListItem(food = food)
+            Spacer(modifier = Modifier.height(10.dp))
+        }
+    }
 }
 
 

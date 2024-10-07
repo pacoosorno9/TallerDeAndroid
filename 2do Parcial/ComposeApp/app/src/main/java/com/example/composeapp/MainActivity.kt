@@ -40,6 +40,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.modifier.modifierLocalMapOf
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -122,7 +123,7 @@ fun MyRow(){
                 .height(200.dp)
         )
     }
-    
+
 }
 //COMPONENTE BOX, PONE ELEMENTOS UNO ENCIMA DEL OTRO
 @Composable
@@ -195,20 +196,156 @@ fun MyComplexLayout() {
     }
 }
 
-@Composable
-fun MyList() {
-    val foodList = listOf("Hamburguesa", "Papas", "Tacos", "Sushi", "Ensalda", "Pozole")
+//@Composable
+//fun MyList() {
+//    val foodList = listOf("Hamburguesa", "Papas", "Tacos", "Sushi", "Ensalda", "Pozole")
+//
+//    LazyColumn(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .padding(10.dp)
+//    ) {
+//        items(foodList) { food ->
+//            MyListItem(food = food )
+//            Spacer(modifier = Modifier.height(10.dp))
+//        }
+//    }
+//}
 
-    LazyColumn(
+
+ @Composable
+fun MyHomework() {
+    Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(10.dp)
     ) {
-        items(foodList) { food ->
-            MyListItem(food = food )
-            Spacer(modifier = Modifier.height(10.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.2f)
+                .background(Color.Cyan),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "Encabezado",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.3f)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .background(Color.Yellow)
+                    .weight(0.5f),
+                contentAlignment = Alignment.Center
+            ) {
+                Column {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "Caja 1 ",
+                            modifier = Modifier.padding(20.dp),
+                            fontSize = 24.sp
+                        )
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(30.dp))
+                                .background(Color.Blue)
+                        ) {
+                            Text(
+                                text = "Accion",
+                                modifier = Modifier
+                                    .padding(start = 30.dp)
+                                    .padding(end = 30.dp)
+                                    .padding(top = 20.dp)
+                                    .padding(bottom = 20.dp), fontSize = 20.sp,
+                                color = Color.White
+                            )
+                        }
+                    }
+                }
+            }
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .background(Color.Green)
+                    .weight(0.5f),
+                contentAlignment = Alignment.Center
+
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "Caja 2 ",
+                        modifier = Modifier.padding(20.dp),
+                        fontSize = 24.sp
+                    )
+                    Box(
+
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(30.dp))
+                            .background(Color.Blue)
+                    ) {
+                        Text(
+                            text = "Accion",
+                            modifier = Modifier
+                                .padding(start = 30.dp)
+                                .padding(end = 30.dp)
+                                .padding(top = 20.dp)
+                                .padding(bottom = 20.dp), fontSize = 20.sp,
+                            color = Color.White
+                        )
+                    }
+                }
+            }
+        }
+        Box(
+            modifier = Modifier
+                .background(Color.LightGray)
+                .fillMaxWidth()
+                .weight(0.3f)
+        ) {
+            Column {
+                Text(
+                    text = "Lista de Elementos",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .fillMaxWidth()
+
+                )
+                MyList()
+            }
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.2f)
+                .background(Color.Magenta),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "Pie de Página",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
+
+}
+
+@Composable
+fun MyList() {
+    // Implementa la lista aquí
+    Text(text = "Elemento de la lista")
 }
 
 
@@ -221,7 +358,7 @@ fun MyList() {
 @Composable
 fun GreetingPreview() {
     ComposeAppTheme {
-        MyList()
+        MyHomework()
 
     }
 }

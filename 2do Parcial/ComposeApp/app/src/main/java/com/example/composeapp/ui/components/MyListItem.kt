@@ -25,8 +25,6 @@ import androidx.compose.ui.unit.sp
 fun MyListItem(food: String){
     Box(
         modifier = Modifier
-            .clip(CircleShape)
-            .background(Color.Cyan)
             .fillMaxSize() /*MARCA TODOO ANCHO DISPONIBLE*/
     ) {
         Row(

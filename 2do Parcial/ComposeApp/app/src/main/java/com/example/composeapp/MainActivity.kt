@@ -1,12 +1,11 @@
 package com.example.composeapp
 
 import android.annotation.SuppressLint
-import android.content.pm.ModuleInfo
-import android.health.connect.datatypes.Device
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -19,34 +18,45 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.windowInsetsEndWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material3.Icon
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.TransformOrigin
-import androidx.compose.ui.input.pointer.motionEventSpy
-import androidx.compose.ui.modifier.modifierLocalMapOf
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.example.composeapp.ui.components.MyListItem
+import com.example.composeapp.ui.screens.CalendarScreen
+import com.example.composeapp.ui.screens.HomeScreen
+import com.example.composeapp.ui.screens.SettinsScreen
 import com.example.composeapp.ui.theme.ComposeAppTheme
+
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -55,8 +65,23 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeAppTheme {
+                val navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()){
-                    MyBox()
+                    NavHost(navController = navController,
+                        startDestination = "home"
+                    ){
+                        composable(route = "home") {
+                            HomeScreen(navController)
+                        }
+
+                        composable(route = "settings") {
+                            SettinsScreen()
+                        }
+
+                        composable(route = "calendar") {
+                            CalendarScreen()
+                        }
+                     }
                 }
             }
         }
@@ -196,24 +221,7 @@ fun MyComplexLayout() {
     }
 }
 
-//@Composable
-//fun MyList() {
-//    val foodList = listOf("Hamburguesa", "Papas", "Tacos", "Sushi", "Ensalda", "Pozole")
-//
-//    LazyColumn(
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .padding(10.dp)
-//    ) {
-//        items(foodList) { food ->
-//            MyListItem(food = food )
-//            Spacer(modifier = Modifier.height(10.dp))
-//        }
-//    }
-//}
-
-
- @Composable
+@Composable
 fun MyHomework() {
     Column(
         modifier = Modifier
@@ -358,6 +366,63 @@ fun MyList() {
     }
 }
 
+@Composable
+fun MyStaleExample(){
+    //GUARDA EL ESTADO EN UNA SOLA ORIENTACION PERO SI SE RECONSTRUYE EL COMPONENTE COMPLETO, SE REGRESA AL ESTADO INICIAL
+//    var counter by remember {
+//        mutableStateOf(0)
+//    }
+//GURDA EL ESTADO DE LA PANTALLA SI SE ROTA SIGUE MANTENIENDO EL VALOR
+//    var counter by rememberSaveable {
+//        mutableStateOf(0)
+//    }
+
+    val counter = remember {
+        mutableStateOf(0)
+    }
+
+    Column (
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+
+    ) {
+        Text("El valor del contador es ${counter.value}")
+        Row {
+            Button(onClick =  { counter.value-- }){
+                Text("Decrementar")
+            }
+
+            Button(onClick =  { counter.value++ }){
+                Text("Incrementar")
+            }
+        }
+    }
+}
+
+@Composable
+fun MyCard(){
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(300.dp)
+            .padding(10.dp)
+    ){
+        Column {
+//            Image(painter = rememberAsyncImagePainter(model = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMUoEOZBCKHmJgzB4lXETrWCs0cLxM8auOOw&s"),
+//                contentDescription = null,
+//                modifier = Modifier.fillMaxWidth().height(200.dp)
+//            )
+            AsyncImage(model = ImageRequest
+                .Builder(LocalContext.current)
+                .data("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9jtbNrhznNNVlJdsOZkmgT0xMJMsOYmjsQQ&s")
+                .build()
+                , contentDescription = null,
+                modifier = Modifier.fillMaxWidth().height(200.dp))
+            Text("Hola")
+        }
+    }
+}
 @Preview(
     showBackground = true,
     showSystemUi = true,
@@ -366,7 +431,7 @@ fun MyList() {
 @Composable
 fun GreetingPreview() {
     ComposeAppTheme {
-        MyHomework()
+        MyCard()
 
     }
 }

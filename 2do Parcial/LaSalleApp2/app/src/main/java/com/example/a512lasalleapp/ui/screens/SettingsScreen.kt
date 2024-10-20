@@ -37,7 +37,6 @@ import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.models.Subject
 import com.example.a512lasalleapp.ui.components.SettingItemPreview
 
-//a512lasalleapp
 @Composable
 fun SettingsScreen(innerPadding: PaddingValues, student: Student, navController: NavController) {
     Column(

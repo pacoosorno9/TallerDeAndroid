@@ -102,7 +102,7 @@ fun SettingsScreenPreview() {
             Tuition(2, "SEGUNDO PAGO DE COLEGIATURA", "septiembre 16 de 2024", "57 - AGO-DIC 2024", 15000, true, "CPAL00020770")
         )
     )
-    // Crea un NavController ficticio para la previsualización
+
     val navController = rememberNavController()
 
     _512LaSalleAppTheme {

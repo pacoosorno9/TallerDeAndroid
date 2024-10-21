@@ -1,0 +1,56 @@
+com.example.a512lasalleapp-animation-core-release-0 /Users/juanosornomartinez/.gradle/caches/transforms-4/0dc0e10fb2b85b9d060af90e01e1eb72/transformed/animation-core-release/res
+com.example.a512lasalleapp-material-ripple-release-1 /Users/juanosornomartinez/.gradle/caches/transforms-4/11fe71e2d1423446b019901e06e0f383/transformed/material-ripple-release/res
+com.example.a512lasalleapp-savedstate-ktx-1.2.1-2 /Users/juanosornomartinez/.gradle/caches/transforms-4/16c613f54f4ce5ae2086bb56d276c11a/transformed/savedstate-ktx-1.2.1/res
+com.example.a512lasalleapp-runtime-saveable-release-3 /Users/juanosornomartinez/.gradle/caches/transforms-4/271cc980b33dc2cc38065cdd38c14f45/transformed/runtime-saveable-release/res
+com.example.a512lasalleapp-ui-text-release-4 /Users/juanosornomartinez/.gradle/caches/transforms-4/2b11bb5da2ae1dc13b830e1884caca65/transformed/ui-text-release/res
+com.example.a512lasalleapp-ui-test-manifest-1.7.2-5 /Users/juanosornomartinez/.gradle/caches/transforms-4/32ebe8026d8b368d26dbfceda9df3346/transformed/ui-test-manifest-1.7.2/res
+com.example.a512lasalleapp-customview-poolingcontainer-1.0.0-6 /Users/juanosornomartinez/.gradle/caches/transforms-4/340b7382bd5aa6947b81485ba109664a/transformed/customview-poolingcontainer-1.0.0/res
+com.example.a512lasalleapp-lifecycle-viewmodel-savedstate-2.8.6-7 /Users/juanosornomartinez/.gradle/caches/transforms-4/341fe98df249dfec7c7c316f4ae645ca/transformed/lifecycle-viewmodel-savedstate-2.8.6/res
+com.example.a512lasalleapp-savedstate-1.2.1-8 /Users/juanosornomartinez/.gradle/caches/transforms-4/360d098df64c45113a5f8f46a8823aec/transformed/savedstate-1.2.1/res
+com.example.a512lasalleapp-lifecycle-runtime-ktx-release-9 /Users/juanosornomartinez/.gradle/caches/transforms-4/4140932a46e3f47a73eefb2b5d243e92/transformed/lifecycle-runtime-ktx-release/res
+com.example.a512lasalleapp-coil-base-2.7.0-10 /Users/juanosornomartinez/.gradle/caches/transforms-4/551f53fa0f74348eb2376d0403d6a0ab/transformed/coil-base-2.7.0/res
+com.example.a512lasalleapp-core-1.13.1-11 /Users/juanosornomartinez/.gradle/caches/transforms-4/557596c692526b487d020701f8a00b1c/transformed/core-1.13.1/res
+com.example.a512lasalleapp-foundation-layout-release-12 /Users/juanosornomartinez/.gradle/caches/transforms-4/56b33bdd4a84cbbe35d3ef3c49095e90/transformed/foundation-layout-release/res
+com.example.a512lasalleapp-core-runtime-2.2.0-13 /Users/juanosornomartinez/.gradle/caches/transforms-4/577b7268049e328521ccb6afb084ee65/transformed/core-runtime-2.2.0/res
+com.example.a512lasalleapp-material3-release-14 /Users/juanosornomartinez/.gradle/caches/transforms-4/5bad0ddce51fa916d207ed8b7385a04d/transformed/material3-release/res
+com.example.a512lasalleapp-lifecycle-process-2.8.6-15 /Users/juanosornomartinez/.gradle/caches/transforms-4/5e5d28e24d1b5b586cdc75193ea4d502/transformed/lifecycle-process-2.8.6/res
+com.example.a512lasalleapp-graphics-path-1.0.1-16 /Users/juanosornomartinez/.gradle/caches/transforms-4/5f5efcca67a05290b2e3b5fc8eb5ccca/transformed/graphics-path-1.0.1/res
+com.example.a512lasalleapp-ui-tooling-preview-release-17 /Users/juanosornomartinez/.gradle/caches/transforms-4/6748bdca833daa42ae16331dbd280209/transformed/ui-tooling-preview-release/res
+com.example.a512lasalleapp-profileinstaller-1.3.1-18 /Users/juanosornomartinez/.gradle/caches/transforms-4/6ada7a4a74987058532bcb92d8c8e764/transformed/profileinstaller-1.3.1/res
+com.example.a512lasalleapp-material-icons-core-release-19 /Users/juanosornomartinez/.gradle/caches/transforms-4/6e440916ff445622a31dfd2193e4793a/transformed/material-icons-core-release/res
+com.example.a512lasalleapp-startup-runtime-1.1.1-20 /Users/juanosornomartinez/.gradle/caches/transforms-4/702ebe958a03a10c35c4b3eb89587c70/transformed/startup-runtime-1.1.1/res
+com.example.a512lasalleapp-annotation-experimental-1.4.1-21 /Users/juanosornomartinez/.gradle/caches/transforms-4/717bd04abc98569bb971369b9e418c66/transformed/annotation-experimental-1.4.1/res
+com.example.a512lasalleapp-foundation-release-22 /Users/juanosornomartinez/.gradle/caches/transforms-4/797c456e791106ddfe3be228895bea76/transformed/foundation-release/res
+com.example.a512lasalleapp-navigation-common-ktx-2.8.2-23 /Users/juanosornomartinez/.gradle/caches/transforms-4/7bb6ea08037871ac27dfcd5c03e43b0d/transformed/navigation-common-ktx-2.8.2/res
+com.example.a512lasalleapp-core-ktx-1.13.1-24 /Users/juanosornomartinez/.gradle/caches/transforms-4/7c93d489987bd4aad7fe206079fdce17/transformed/core-ktx-1.13.1/res
+com.example.a512lasalleapp-emoji2-1.3.0-25 /Users/juanosornomartinez/.gradle/caches/transforms-4/80e554a4d70e8600bd0d509f6a0fb638/transformed/emoji2-1.3.0/res
+com.example.a512lasalleapp-activity-compose-1.9.2-26 /Users/juanosornomartinez/.gradle/caches/transforms-4/83aa8fea5d8a4f1b4d368c6462849150/transformed/activity-compose-1.9.2/res
+com.example.a512lasalleapp-navigation-runtime-ktx-2.8.2-27 /Users/juanosornomartinez/.gradle/caches/transforms-4/8596924d42cb48444070269d118d1d19/transformed/navigation-runtime-ktx-2.8.2/res
+com.example.a512lasalleapp-ui-tooling-release-28 /Users/juanosornomartinez/.gradle/caches/transforms-4/8d178f3678ece09f6ce7453c5c204446/transformed/ui-tooling-release/res
+com.example.a512lasalleapp-navigation-compose-2.8.2-29 /Users/juanosornomartinez/.gradle/caches/transforms-4/91af9184ca83596e315d8ea62253f1e0/transformed/navigation-compose-2.8.2/res
+com.example.a512lasalleapp-ui-util-release-30 /Users/juanosornomartinez/.gradle/caches/transforms-4/950baff3b3d0204b2ace80b3dd3fd037/transformed/ui-util-release/res
+com.example.a512lasalleapp-activity-ktx-1.9.2-31 /Users/juanosornomartinez/.gradle/caches/transforms-4/99543e799a6795a6ddb27c38f7183630/transformed/activity-ktx-1.9.2/res
+com.example.a512lasalleapp-lifecycle-viewmodel-ktx-2.8.6-32 /Users/juanosornomartinez/.gradle/caches/transforms-4/9cef2fbce3b5d2343a463300f68c3f1a/transformed/lifecycle-viewmodel-ktx-2.8.6/res
+com.example.a512lasalleapp-ui-graphics-release-33 /Users/juanosornomartinez/.gradle/caches/transforms-4/a3794009702f319ed886a084b9474a9b/transformed/ui-graphics-release/res
+com.example.a512lasalleapp-ui-release-34 /Users/juanosornomartinez/.gradle/caches/transforms-4/a4adb96b666cbd97c2ae912e9eb8a367/transformed/ui-release/res
+com.example.a512lasalleapp-ui-geometry-release-35 /Users/juanosornomartinez/.gradle/caches/transforms-4/a5701049c5166221b3d41a90d092f8ac/transformed/ui-geometry-release/res
+com.example.a512lasalleapp-activity-1.9.2-36 /Users/juanosornomartinez/.gradle/caches/transforms-4/a879a099e03d44b2c2f5a09ba4b226f9/transformed/activity-1.9.2/res
+com.example.a512lasalleapp-navigation-runtime-2.8.2-37 /Users/juanosornomartinez/.gradle/caches/transforms-4/abd1b50186c512c502093267f006bef2/transformed/navigation-runtime-2.8.2/res
+com.example.a512lasalleapp-lifecycle-runtime-compose-release-38 /Users/juanosornomartinez/.gradle/caches/transforms-4/ae0f48c790b064c87a1352a9b634e0dc/transformed/lifecycle-runtime-compose-release/res
+com.example.a512lasalleapp-ui-unit-release-39 /Users/juanosornomartinez/.gradle/caches/transforms-4/c2d5822e1bbebe881890b50c2da967b1/transformed/ui-unit-release/res
+com.example.a512lasalleapp-ui-tooling-data-release-40 /Users/juanosornomartinez/.gradle/caches/transforms-4/c63e35770de96ef645dda168cdcf3675/transformed/ui-tooling-data-release/res
+com.example.a512lasalleapp-appcompat-resources-1.6.1-41 /Users/juanosornomartinez/.gradle/caches/transforms-4/c837b0468d55e3959c0905c3a1ec8a78/transformed/appcompat-resources-1.6.1/res
+com.example.a512lasalleapp-runtime-release-42 /Users/juanosornomartinez/.gradle/caches/transforms-4/c89dce41caaba6b5afd3be4763f0e90c/transformed/runtime-release/res
+com.example.a512lasalleapp-lifecycle-livedata-core-2.8.6-43 /Users/juanosornomartinez/.gradle/caches/transforms-4/cd10660ae99378d28f0cc73c6a9a5da4/transformed/lifecycle-livedata-core-2.8.6/res
+com.example.a512lasalleapp-lifecycle-runtime-release-44 /Users/juanosornomartinez/.gradle/caches/transforms-4/d231cce299d5433ee3b8df205032c5aa/transformed/lifecycle-runtime-release/res
+com.example.a512lasalleapp-material-release-45 /Users/juanosornomartinez/.gradle/caches/transforms-4/d7a841aaf13c5e425b9de865fdcac6b7/transformed/material-release/res
+com.example.a512lasalleapp-animation-release-46 /Users/juanosornomartinez/.gradle/caches/transforms-4/db682c167aec003de5d674786ecd2f71/transformed/animation-release/res
+com.example.a512lasalleapp-lifecycle-viewmodel-release-47 /Users/juanosornomartinez/.gradle/caches/transforms-4/e2950a31792ddfdf78982714c35e5522/transformed/lifecycle-viewmodel-release/res
+com.example.a512lasalleapp-lifecycle-viewmodel-compose-release-48 /Users/juanosornomartinez/.gradle/caches/transforms-4/ed6ec3863496304775f535391aba886f/transformed/lifecycle-viewmodel-compose-release/res
+com.example.a512lasalleapp-navigation-common-2.8.2-49 /Users/juanosornomartinez/.gradle/caches/transforms-4/fae90ff01f10b0ec7da676654e4477c4/transformed/navigation-common-2.8.2/res
+com.example.a512lasalleapp-resValues-50 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/build/generated/res/resValues/debug
+com.example.a512lasalleapp-packageDebugResources-51 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.a512lasalleapp-packageDebugResources-52 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.a512lasalleapp-debug-53 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.a512lasalleapp-debug-54 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/src/debug/res
+com.example.a512lasalleapp-main-55 /Users/juanosornomartinez/Documents/GitHub/TallerDeAndroid/2do Parcial/LaSalleApp2/app/src/main/res

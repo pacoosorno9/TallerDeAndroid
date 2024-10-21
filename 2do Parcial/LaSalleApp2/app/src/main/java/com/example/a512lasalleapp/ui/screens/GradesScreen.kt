@@ -152,7 +152,6 @@ fun PreviewGradesScreenWithTable() {
             institutionalEmail = "jom77268@lasallebajio.edu.mx",
             career = "ISSC",
             photo = "https://em-content.zobj.net/source/apple/237/ghost_1f47b.png",
-
             currentSemester = "4",
             subjects = listOf(
                 Subject(id = 1, subjectName = "PROGRAMACIÓN PARA PLATAFORMA OS X", partialGrades = listOf(8.1f, 10.0f, 7.0f)),

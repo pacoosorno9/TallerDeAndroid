@@ -58,13 +58,13 @@ val communities = listOf(
 )
 
 val subjectList = listOf(
-    Subject(id = 1, subjectName = "Math", partialGrades = listOf()),
-    Subject(id = 2, subjectName = "Physics", partialGrades = listOf()),
-    Subject(id = 3, subjectName = "Chemistry", partialGrades = listOf()),
-    Subject(id = 4, subjectName = "Biology", partialGrades = listOf()),
-    Subject(id = 5, subjectName = "History", partialGrades = listOf()),
-    Subject(id = 6, subjectName = "Data Structures", partialGrades = listOf()),
-    Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf())
+    Subject(id = 1, subjectName = "PROGRAMACIÓN PARA PLATAFORMA OS X", partialGrades = listOf()),
+    Subject(id = 2, subjectName = "DESARROLLO PARA APLICACIONES EMPRESARIALES", partialGrades = listOf()),
+    Subject(id = 3, subjectName = "TALLER DE DESARROLLO MÓVIL PARA WINDOWS", partialGrades = listOf()),
+    Subject(id = 4, subjectName = "FUNDAMENTOS DE REDES Y RUTEO", partialGrades = listOf()),
+    Subject(id = 5, subjectName = "SERVIDORES PARA EL DESARROLLO DE SOFTWARE", partialGrades = listOf()),
+    Subject(id = 6, subjectName = "RELIGIÓN, CULTURA Y TRASCENDENCIA", partialGrades = listOf()),
+    Subject(id = 7, subjectName = "LENGUA EXTRANJERA III - INGLÉS IV", partialGrades = listOf())
 )
 
 val settingsList = listOf(
@@ -149,7 +149,7 @@ val tuitionList = listOf(
         1,
         "PRIMER PAGO",
         "agosto 16 de 2024",
-        "57 - AGO-DIC 2024",
+        "AGO-DIC 2024",
         15000,
         true,
         "CPAL00020769"
@@ -157,7 +157,7 @@ val tuitionList = listOf(
         2,
         "SEGUNDO PAGO",
         "septiembre 16 de 2024",
-        "57 - AGO-DIC 2024",
+        "AGO-DIC 2024",
         15000,
         true,
         "CPAL00020770"

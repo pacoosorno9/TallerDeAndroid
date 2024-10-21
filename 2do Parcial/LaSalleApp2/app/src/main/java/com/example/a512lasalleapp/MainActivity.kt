@@ -62,6 +62,7 @@ class MainActivity : ComponentActivity() {
 
             val studentEmail = "jom77268@lasallebajio.edu.mx"
             val student = studentsList.find { it.institutionalEmail == studentEmail }
+            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
 
             LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -144,6 +145,18 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.Theme.route) {
                             PasswordScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.Payments.route) {
+                            // Obtener el correo del estudiante desde SharedPreferences
+                            val studentEmail = sharedPreferences.getString("studentEmail", "")
+
+                            // Buscar el estudiante por su correo en la lista de estudiantes
+                            val student = studentsList.find { it.institutionalEmail == studentEmail }
+
+                            if (student != null) {
+                                // Si se encuentra el estudiante, mostrar la pantalla de pagos
+                                PaymentsScreen(innerPadding = innerPadding, navController = navController, student = student)
+                            }
                         }
                     }
                 }

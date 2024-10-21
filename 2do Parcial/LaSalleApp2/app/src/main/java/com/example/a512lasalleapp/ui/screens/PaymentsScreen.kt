@@ -49,77 +49,59 @@ fun PaymentsScreen(innerPadding: PaddingValues, navController: NavController, st
 @Composable
 fun PaymentsScreenPreview() {
     val student = Student(
-        id = 4,
-        fullName = "Diana Prince",
-        dateOfBirth = "2002-07-09",
-        institutionalEmail = "diana.prince@university.edu",
+        id = 1,
+        fullName = "Juan Francisco",
+        dateOfBirth = "2004-06-24",
+        institutionalEmail = "jom77268@lasallebajio.edu.mx",
         career = "ISSC",
-        photo = "R.drawable.studen_1",
+        photo = "https://em-content.zobj.net/source/apple/237/ghost_1f47b.png",
         currentSemester = "4",
         subjects = listOf(
-            Subject(
-                id = 22,
-                subjectName = "Human-Computer Interaction",
-                partialGrades = listOf(9.0f, 8.5f, 9.0f)
-            ), Subject(
-                id = 23,
-                subjectName = "Parallel Computing",
-                partialGrades = listOf(9.5f, 9.0f, 9.0f)
-            ), Subject(
-                id = 24, subjectName = "Computer Graphics", partialGrades = listOf(8.5f, 9.0f, 9.5f)
-            ), Subject(
-                id = 25, subjectName = "Game Development", partialGrades = listOf(9.0f, 8.5f, 8.0f)
-            ), Subject(
-                id = 26,
-                subjectName = "Blockchain Technology",
-                partialGrades = listOf(8.5f, 8.0f, 9.5f)
-            ), Subject(
-                id = 27, subjectName = "Software Testing", partialGrades = listOf(9.0f, 9.5f, 8.5f)
-            ), Subject(id = 28, subjectName = "DevOps", partialGrades = listOf(9.0f, 8.0f, 9.5f))
+
         ),
         pastSemesters = listOf(10f, 7.5f, 9.7f),
         tution = listOf(
             Tuition(
-                16,
+                1,
                 "PRIMER PAGO",
                 "enero 16 de 2026",
-                "60 - ENE-JUN 2026",
+                "ENE-JUN 2026",
                 15000,
                 true,
                 "CPAL00020784"
             ),
             Tuition(
-                17,
+                2,
                 "SEGUNDO PAGO",
                 "febrero 16 de 2026",
-                "60 - ENE-JUN 2026",
+                "ENE-JUN 2026",
                 15000,
                 true,
                 "CPAL00020785"
             ),
             Tuition(
-                18,
+                3,
                 "TERCER PAGO",
                 "marzo 16 de 2026",
-                "60 - ENE-JUN 2026",
+                "ENE-JUN 2026",
                 15000,
                 true,
                 "CPAL00020786"
             ),
             Tuition(
-                19,
+                4,
                 "CUARTO PAGO",
                 "abril 16 de 2026",
-                "60 - ENE-JUN 2026",
+                "ENE-JUN 2026",
                 15000,
                 false,
                 "CPAL00020787"
             ),
             Tuition(
-                20,
+                5,
                 "QUINTO PAGO",
                 "mayo 16 de 2026",
-                "60 - ENE-JUN 2026",
+                "ENE-JUN 2026",
                 15000,
                 false,
                 "CPAL00020788"

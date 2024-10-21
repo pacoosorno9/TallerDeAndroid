@@ -170,7 +170,7 @@ fun HomeScreen(
                     })
                 Widget(icon = Task,
                     text = "Tareas",
-                    onClick = { navController.navigate("settings") })
+                    onClick = { })
                 Widget(icon = Cash,
                     text = "Pagos",
                     onClick = { navController.navigate("payments") })

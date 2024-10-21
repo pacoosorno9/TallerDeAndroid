@@ -139,7 +139,7 @@ fun TutionItem(navController: NavController, tuition: Tuition) {
                     .align(Alignment.CenterHorizontally)
             ) {
                 Button(
-                    onClick = { navController.navigate("reception") },
+                    onClick = {  },
                     modifier = Modifier
                         .width(140.dp)
                         .height(32.dp)
@@ -153,7 +153,7 @@ fun TutionItem(navController: NavController, tuition: Tuition) {
                 }
                 Spacer(modifier = Modifier.width(30.dp))
                 Button(
-                    onClick = { navController.navigate("ban_bajio") },
+                    onClick = {  },
                     modifier = Modifier
                         .width(140.dp)
                         .height(32.dp)
@@ -175,10 +175,10 @@ fun TutionItem(navController: NavController, tuition: Tuition) {
 @Composable
 fun TuitionItemPreview() {
     val tuition = Tuition(
-        id = 21,
+        id = 1,
         name = "PRIMER PAGO",
         maturity = "agosto 16 de 2026",
-        period = "61 - AGO-DIC 2026",
+        period = "AGO-DIC 2026",
         import = 15000,
         state = false,
         folio = "CPAL00020789"

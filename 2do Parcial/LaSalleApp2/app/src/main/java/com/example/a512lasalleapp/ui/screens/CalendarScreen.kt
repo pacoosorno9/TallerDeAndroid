@@ -16,40 +16,43 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a512lasalleapp.ui.components.DayItem
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun CalendarScreen(innerPadding: PaddingValues) {
-    ScreenTemplate(innerPadding = innerPadding, header = {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            Text(
-                text = "Calendario",
-                color = Color.White,
-                style = MaterialTheme.typography.titleLarge
-            )
-            Text(
-                modifier = Modifier.padding(top = 10.dp),
-                text = "Enero",
-                color = Color.White,
-                style = MaterialTheme.typography.titleLarge
-            )
-            LazyRow(
+    ScreenTemplate(
+        innerPadding = innerPadding,
+        header = {
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 5.dp)
+                    .fillMaxSize()
+                    .padding(16.dp)
             ) {
-                items(31){
-                    DayItem()
+                Text(
+                    text = "Calendario",
+                    color = Color.White,
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Text(
+                    modifier = Modifier.padding(top = 10.dp),
+                    text = "Enero",
+                    color = Color.White,
+                    style = MaterialTheme.typography.titleLarge
+                )
+                LazyRow(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 5.dp)
+                ) {
+                    items(31){
+                        DayItem()
+                    }
                 }
             }
+        }, body = {
+            Text(text = "Hola")
         }
-    }, body = {
-        Text("Hola")
-    })
+    )
 }
 
 @Preview(
@@ -57,8 +60,10 @@ fun CalendarScreen(innerPadding: PaddingValues) {
     showSystemUi = true
 )
 @Composable
-fun CalendarScreenPreview() {
-    _512LaSalleAppTheme {
-        CalendarScreen(innerPadding = PaddingValues(0.dp))
+fun CalendarScreenPreview(){
+    LaSalleAppTheme {
+        CalendarScreen(
+            innerPadding = PaddingValues(0.dp)
+        )
     }
 }

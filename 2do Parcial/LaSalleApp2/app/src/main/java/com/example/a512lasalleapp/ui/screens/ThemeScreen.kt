@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun ThemeScreen(innerPadding: PaddingValues) {
@@ -62,7 +62,7 @@ fun PreviewThemeScreen() {
     val navController = rememberNavController()
     val isDarkTheme = remember { false }
 
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         ThemeScreen(
             innerPadding = PaddingValues(),
         )

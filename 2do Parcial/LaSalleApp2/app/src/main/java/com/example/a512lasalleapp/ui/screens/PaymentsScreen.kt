@@ -17,7 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.models.Subject
 import com.example.a512lasalleapp.models.Tuition
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.a512lasalleapp.ui.components.TutionItem
 
 
@@ -54,6 +54,7 @@ fun PaymentsScreenPreview() {
         dateOfBirth = "2002-07-09",
         institutionalEmail = "diana.prince@university.edu",
         career = "ISSC",
+        photo = "R.drawable.studen_1",
         currentSemester = "4",
         subjects = listOf(
             Subject(
@@ -80,7 +81,7 @@ fun PaymentsScreenPreview() {
         tution = listOf(
             Tuition(
                 16,
-                "PRIMER ",
+                "PRIMER PAGO",
                 "enero 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
@@ -126,7 +127,7 @@ fun PaymentsScreenPreview() {
         )
     )
     val navController = rememberNavController()
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         PaymentsScreen(innerPadding = PaddingValues(), navController = navController, student)
     }
 }

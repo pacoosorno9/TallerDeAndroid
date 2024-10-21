@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a512lasalleapp.models.Subject
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun SubjectScreen(subject: Subject, innerPadding: PaddingValues) {
@@ -81,11 +81,11 @@ fun SubjectScreen(subject: Subject, innerPadding: PaddingValues) {
 fun SubjectScreenPreview() {
     val exampleSubject = Subject(
         id = 1,
-        subjectName = "Programacion Para Plataforma OS X",
-        partialGrades = listOf(8.1f, 10.0f, 6.0f)
+        subjectName = "Desarrollo de Aplicaciones Móviles",
+        partialGrades = listOf(8.5f, 9.0f, 9.2f)
     )
 
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         SubjectScreen(subject = exampleSubject, innerPadding = PaddingValues())
     }
 }

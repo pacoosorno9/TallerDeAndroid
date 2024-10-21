@@ -22,17 +22,17 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.R
+import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
 import com.example.a512lasalleapp.models.Subject
 import com.example.a512lasalleapp.models.Tuition
 import com.example.a512lasalleapp.ui.components.SubjectItem
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun GradesScreen(navController: NavController, innerPadding: PaddingValues, student: Student) {
-    // Calcular el promedio
+    // Calcular el promedio total del semestre
     val averageSemesterGrade = student.subjects.map { it.partialGrades.average() }.average()
     val scrollState = rememberScrollState()
 
@@ -143,7 +143,7 @@ fun GradesScreen(navController: NavController, innerPadding: PaddingValues, stud
 )
 @Composable
 fun PreviewGradesScreenWithTable() {
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         val navController = rememberNavController()
         val student = Student(
             id = 1,
@@ -151,16 +151,18 @@ fun PreviewGradesScreenWithTable() {
             dateOfBirth = "2004-06-24",
             institutionalEmail = "jom77268@lasallebajio.edu.mx",
             career = "ISSC",
+            photo = "https://em-content.zobj.net/source/apple/237/ghost_1f47b.png",
+
             currentSemester = "4",
             subjects = listOf(
-                Subject(id = 1, subjectName = "Programacion Para Plataforma OS X", partialGrades = listOf(8.1f, 10.0f, 6.0f)),
-                Subject(id = 2, subjectName = "Desarrollo Para Aplicaciones Empresariales", partialGrades = listOf(7.8f, 6.7f, 8.0f)),
-                Subject(id = 3, subjectName = "Taller De Desarrollo Movil Para Windows", partialGrades = listOf(10.0f, 8.0f, 9.0f))
+                Subject(id = 1, subjectName = "PROGRAMACIÓN PARA PLATAFORMA OS X", partialGrades = listOf(8.1f, 10.0f, 7.0f)),
+                Subject(id = 2, subjectName = "DESARROLLO PARA APLICACIONES EMPRESARIALES", partialGrades = listOf(7.8f, 6.7f, 8.0f)),
+                Subject(id = 3, subjectName = "TALLER DE DESARROLLO MÓVIL PARA WINDOWS", partialGrades = listOf(10.0f, 8.0f, 9.0f))
             ),
             pastSemesters = listOf(0f),
             tution = listOf(
-                Tuition(1, "PRIMER PAGO DE COLEGIATURA", "agosto 16 de 2024", "57 - AGO-DIC 2024", 15000, true, "CPAL00020769"),
-                Tuition(2, "SEGUNDO PAGO DE COLEGIATURA", "septiembre 16 de 2024", "57 - AGO-DIC 2024", 15000, true, "CPAL00020770")
+                Tuition(1, "PRIMER PAGO DE COLEGIATURA", "agosto 16 de 2024", "AGO-DIC 2024", 15000, true, "CPAL00020769"),
+                Tuition(2, "SEGUNDO PAGO DE COLEGIATURA", "septiembre 16 de 2024", "AGO-DIC 2024", 15000, true, "CPAL00020770")
             )
         )
 

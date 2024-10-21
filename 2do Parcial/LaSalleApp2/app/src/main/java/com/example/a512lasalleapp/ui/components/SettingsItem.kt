@@ -28,8 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
-
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun SettingsItem(icon: ImageVector, text: String, onClick: () -> Unit) {
@@ -70,8 +69,7 @@ fun SettingsItem(icon: ImageVector, text: String, onClick: () -> Unit) {
 @Preview
 @Composable
 fun SettingItemPreview() {
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         SettingsItem(icon = Icons.Default.Home, text = "Inicio", onClick = {})
     }
 }
-

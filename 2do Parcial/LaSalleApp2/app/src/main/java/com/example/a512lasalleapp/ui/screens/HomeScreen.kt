@@ -21,9 +21,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Icon
@@ -34,7 +32,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,23 +40,32 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import coil.compose.AsyncImage
 import com.example.a512lasalleapp.R
-import com.example.a512lasalleapp.ui.components.CardImage
-import com.example.a512lasalleapp.ui.components.Widget
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
-import com.example.a512lasalleapp.ui.utils.Cash
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Logout
+import com.example.a512lasalleapp.ui.components.CardImage
+import com.example.a512lasalleapp.ui.commponents.Widget
+import com.example.a512lasalleapp.ui.utils.Cash
 import com.example.a512lasalleapp.ui.utils.Task
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.communities
 import com.example.a512lasalleapp.ui.utils.newsList
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.layout.ContentScale
+import coil.compose.AsyncImage
+import com.example.a512lasalleapp.models.Student
+import com.example.a512lasalleapp.models.Subject
 
 @Composable
 fun HomeScreen(
     innerPadding: PaddingValues,
     navController: NavController,
-    context: Context? = null,) {
+    context: Context? = null,
+
+    ) {
+    val sharedPreferences = context?.getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+    val fullName = sharedPreferences?.getString("studentFullName", "Estudiante") ?: "Estudiante"
 
     Column(
         modifier = Modifier
@@ -70,27 +76,23 @@ fun HomeScreen(
                 rememberScrollState()
             )
     ) {
-        // Header
+
+        // HEADER
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(bottomStart = 60.dp, bottomEnd = 60.dp))
+                .clip(
+                    RoundedCornerShape(
+                        bottomStart = 60.dp,
+                        bottomEnd = 60.dp
+                    )
+                )
                 .height(270.dp)
                 .background(MaterialTheme.colorScheme.primary)
         ) {
-
-//            AsyncImage(
-//                model = ImageRequest.Builder(LocalContext.current)
-//                    .data("https://www.lasallebajio.edu.mx/comunidad/images/imagotipos/Elementos%20Gr%C3%A1ficos/Edificios%20en%20vectores-13.png")
-//                    .build(),
-//                contentDescription = "Background Image",
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .offset(y = 70.dp)
-//            )
             Image(
-                painter = painterResource(id = R.drawable.background),
-                contentDescription = "Background Image",
+                painterResource(id = R.drawable.background),
+                contentDescription = "background",
                 modifier = Modifier
                     .fillMaxSize()
                     .offset(y = 70.dp)
@@ -101,13 +103,11 @@ fun HomeScreen(
                     .padding(20.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
                 Image(
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = "Logo",
                     modifier = Modifier.size(70.dp)
                 )
-
                 Column(
                     modifier = Modifier.weight(1f)
                 ) {
@@ -117,7 +117,7 @@ fun HomeScreen(
                         fontSize = 18.sp
                     )
                     Text(
-                        text = "Juan Francisco",
+                        text = fullName,
                         color = Color.White,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
@@ -126,15 +126,24 @@ fun HomeScreen(
                 }
                 Icon(
                     imageVector = Logout,
-                    contentDescription = "Logout",
+                    contentDescription = "LogOut",
                     modifier = Modifier
                         .size(45.dp)
                         .clickable {
-                            Log.i("HomeScreen", "Cerrando sesion")
+                            Log.i("HomeScreen", "Cerrando Sesion")
+
+                            if (sharedPreferences != null) {
+                                with(sharedPreferences.edit()) {
+                                    putBoolean("isLogged", false)
+                                    apply()
+                                }
+                            }
+                            navController.navigate("login") {
+                                popUpTo("home") { inclusive = true }
+                            }
                         },
                     tint = Color.White
                 )
-
             }
         }
 
@@ -153,14 +162,22 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
-                // Widget
-                Widget(icon = Icons.Default.DateRange, text = "Sin eventos")
-                Widget(icon = Task, text = "2 tareas")
-                Widget(icon = Cash, text = stringResource(id = R.string.cash_text))
+                Widget(
+                    icon = Icons.Default.DateRange,
+                    text = "Sin eventos",
+                    onClick = {
+                        navController.navigate("calendar")
+                    })
+                Widget(icon = Task,
+                    text = "Tareas",
+                    onClick = { navController.navigate("settings") })
+                Widget(icon = Cash,
+                    text = "Pagos",
+                    onClick = { navController.navigate("payments") })
             }
         }
 
-        // Body
+        // BODY
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -169,7 +186,6 @@ fun HomeScreen(
             Column(
                 modifier = Modifier
                     .padding(20.dp)
-
             ) {
                 Text(
                     text = stringResource(id = R.string.news),
@@ -178,24 +194,26 @@ fun HomeScreen(
                 LazyRow(
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    items(newsList){ news ->
-                        CardImage(news = news){
-                            navController.navigate(Screens.NewsDetail.route+"/${news.id}")
+                    items(newsList) { news ->
+                        CardImage(news = news) {
+                            navController.navigate(Screens.NewsDetail.route + "/${news.id}")
                         }
                     }
                 }
+
                 Text(
                     text = "Comunidad",
                     modifier = Modifier.padding(top = 20.dp),
                     style = MaterialTheme.typography.titleLarge
                 )
+
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(500.dp)
                 ) {
-                    items(communities){
+                    items(communities) {
                         Box(
                             modifier = Modifier
                                 .clip(RoundedCornerShape(16.dp))
@@ -213,9 +231,9 @@ fun HomeScreen(
                 }
             }
         }
-
     }
 }
+
 
 @Preview(
     showBackground = true,
@@ -224,7 +242,7 @@ fun HomeScreen(
 @Composable
 fun HomeScreenPreview() {
     val navController = rememberNavController()
-    _512LaSalleAppTheme {
-        HomeScreen(innerPadding = PaddingValues(0.dp), navController = navController)
+    LaSalleAppTheme {
+        HomeScreen(innerPadding = PaddingValues(0.dp), navController,)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.lasalleapp.ui.screens
+package com.example.a512lasalleapp.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,20 +22,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.a512lasalleapp.models.Student
+import com.example.a512lasalleapp.models.Subject
 import com.example.a512lasalleapp.models.Tuition
 import com.example.a512lasalleapp.ui.components.CardImage
 import com.example.a512lasalleapp.ui.components.PerfilItem
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
 import com.example.a512lasalleapp.ui.components.SettingsItem
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.newsList
 import com.example.a512lasalleapp.ui.utils.settingsList
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.a512lasalleapp.models.Student
-import com.example.a512lasalleapp.models.Subject
-import com.example.a512lasalleapp.ui.components.SettingItemPreview
 
 @Composable
 fun SettingsScreen(innerPadding: PaddingValues, student: Student, navController: NavController) {
@@ -85,16 +84,16 @@ fun SettingsScreenPreview() {
         dateOfBirth = "2004-06-24",
         institutionalEmail = "jom77268@lasallebajio.edu.mx",
         career = "ISSC",
-//        password = "alice123",
+        photo = "https://em-content.zobj.net/source/apple/237/ghost_1f47b.png",
         currentSemester = "1",
         subjects = listOf(
-            Subject(id = 1, subjectName = "Math", partialGrades = listOf(8.0f, 9.0f, 7.5f)),
-            Subject(id = 2, subjectName = "Physics", partialGrades = listOf(7.0f, 8.5f, 9.0f)),
-            Subject(id = 3, subjectName = "Chemistry", partialGrades = listOf(9.5f, 8.5f, 10f)),
-            Subject(id = 4, subjectName = "Biology", partialGrades = listOf(7.5f, 8.0f, 7.0f)),
-            Subject(id = 5, subjectName = "History", partialGrades = listOf(8.0f, 9.5f, 9.0f)),
-            Subject(id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)),
-            Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf(9.0f, 9.5f, 8.5f))
+            Subject(id = 1, subjectName = "PROGRAMACIÓN PARA PLATAFORMA OS X", partialGrades = listOf(8.1f, 10.0f, 7.0f)),
+            Subject(id = 2, subjectName = "DESARROLLO INTEGRAL PARA APLICACIONES EMPRESARIALES", partialGrades = listOf(7.8f, 6.7f, 8.0f)),
+            Subject(id = 3, subjectName = "TALLER DE DESARROLLO MÓVIL PARA PLATAFORMA WINDOWS", partialGrades = listOf(10.0f, 8.0f, 9.0f)),
+            Subject(id = 4, subjectName = "FUNDAMENTOS DE REDES Y RUTEO", partialGrades = listOf(9.2f, 8.2f, 9.5f)),
+            Subject(id = 5, subjectName = "IMPLEMENTACIÓN E INTEGRACIÓN DE SERVIDORES PARA EL DESARROLLO DE SOFTWARE", partialGrades = listOf(4.9f, 7.8f, 9.8f)),
+            Subject(id = 6, subjectName = "RELIGIÓN, CULTURA Y TRASCENDENCIA", partialGrades = listOf(8.3f, 8.0f, 10.0f)),
+            Subject(id = 7, subjectName = "LENGUA EXTRANJERA III - INGLÉS IV", partialGrades = listOf(5.9f, 6.2f, 10.0f))
         ),
         pastSemesters = listOf(0f),
         tution = listOf(
@@ -105,7 +104,7 @@ fun SettingsScreenPreview() {
 
     val navController = rememberNavController()
 
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         SettingsScreen(innerPadding = PaddingValues(), student = student, navController = navController)
     }
 }

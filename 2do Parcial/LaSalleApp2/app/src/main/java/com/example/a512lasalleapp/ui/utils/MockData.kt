@@ -1,6 +1,8 @@
 package com.example.a512lasalleapp.ui.utils
 
+import androidx.compose.foundation.Image
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
@@ -12,6 +14,7 @@ import com.example.a512lasalleapp.models.Settings
 import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.models.Subject
 import com.example.a512lasalleapp.models.Tuition
+import java.time.LocalDate
 
 val newsList = listOf(
     News(
@@ -61,35 +64,7 @@ val subjectList = listOf(
     Subject(id = 4, subjectName = "Biology", partialGrades = listOf()),
     Subject(id = 5, subjectName = "History", partialGrades = listOf()),
     Subject(id = 6, subjectName = "Data Structures", partialGrades = listOf()),
-    Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf()),
-    Subject(id = 8, subjectName = "Database Systems", partialGrades = listOf()),
-    Subject(id = 9, subjectName = "Operating Systems", partialGrades = listOf()),
-    Subject(id = 10, subjectName = "Computer Networks", partialGrades = listOf()),
-    Subject(id = 11, subjectName = "Software Engineering", partialGrades = listOf()),
-    Subject(id = 12, subjectName = "Discrete Mathematics", partialGrades = listOf()),
-    Subject(id = 13, subjectName = "Compiler Design", partialGrades = listOf()),
-    Subject(id = 14, subjectName = "Artificial Intelligence", partialGrades = listOf()),
-    Subject(id = 15, subjectName = "Machine Learning", partialGrades = listOf()),
-    Subject(id = 16, subjectName = "Deep Learning", partialGrades = listOf()),
-    Subject(id = 17, subjectName = "Web Development", partialGrades = listOf()),
-    Subject(id = 18, subjectName = "Mobile App Development", partialGrades = listOf()),
-    Subject(id = 19, subjectName = "Cloud Computing", partialGrades = listOf()),
-    Subject(id = 20, subjectName = "Quantum Computing", partialGrades = listOf()),
-    Subject(id = 21, subjectName = "Cybersecurity", partialGrades = listOf()),
-    Subject(id = 22, subjectName = "Human-Computer Interaction", partialGrades = listOf()),
-    Subject(id = 23, subjectName = "Parallel Computing", partialGrades = listOf()),
-    Subject(id = 24, subjectName = "Computer Graphics", partialGrades = listOf()),
-    Subject(id = 25, subjectName = "Game Development", partialGrades = listOf()),
-    Subject(id = 26, subjectName = "Blockchain Technology", partialGrades = listOf()),
-    Subject(id = 27, subjectName = "Software Testing", partialGrades = listOf()),
-    Subject(id = 28, subjectName = "DevOps", partialGrades = listOf()),
-    Subject(id = 29, subjectName = "Big Data", partialGrades = listOf()),
-    Subject(id = 30, subjectName = "Natural Language Processing", partialGrades = listOf()),
-    Subject(id = 31, subjectName = "Augmented Reality", partialGrades = listOf()),
-    Subject(id = 32, subjectName = "Virtual Reality", partialGrades = listOf()),
-    Subject(id = 33, subjectName = "Ethical Hacking", partialGrades = listOf()),
-    Subject(id = 34, subjectName = "Internet of Things", partialGrades = listOf()),
-    Subject(id = 35, subjectName = "Software Architecture", partialGrades = listOf())
+    Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf())
 )
 
 val settingsList = listOf(
@@ -97,37 +72,34 @@ val settingsList = listOf(
         id = 1, icon = Passkey, option = "Cambiar contraseña"
     ),
     Settings(
-        id = 2, icon = MoonStars, option = "Cambiar tema"
+        id = 1, icon = MoonStars, option = "Cambiar tema"
     ),
 )
-
 val studentsList = listOf(
     Student(
         id = 1,
-        fullName = "Alice Johnson",
-        dateOfBirth = "10 de Enero de 2001",
-        institutionalEmail = "alice.johnson@university.edu",
+        fullName = "Juan Francisco",
+        dateOfBirth = "24 de Junio de 2004",
+        institutionalEmail = "jom77268@lasallebajio.edu.mx",
         career = "ISSC",
-        currentSemester = "1",
+        photo = "https://em-content.zobj.net/source/apple/237/ghost_1f47b.png",
+        currentSemester = "4",
         subjects = listOf(
-            Subject(id = 1, subjectName = "Math", partialGrades = listOf(8.0f, 9.0f, 7.5f)),
-            Subject(id = 2, subjectName = "Physics", partialGrades = listOf(7.0f, 8.5f, 9.0f)),
-            Subject(id = 3, subjectName = "Chemistry", partialGrades = listOf(9.5f, 8.5f, 10f)),
-            Subject(id = 4, subjectName = "Biology", partialGrades = listOf(7.5f, 8.0f, 7.0f)),
-            Subject(id = 5, subjectName = "History", partialGrades = listOf(8.0f, 9.5f, 9.0f)),
-            Subject(
-                id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)
-            ),
-            Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf(9.0f, 9.5f, 8.5f))
+            Subject(id = 1, subjectName = "PROGRAMACIÓN PARA PLATAFORMA OS X", partialGrades = listOf(8.1f, 10.0f, 7.0f)),
+            Subject(id = 2, subjectName = "DESARROLLO PARA APLICACIONES EMPRESARIALES", partialGrades = listOf(7.8f, 6.7f, 8.0f)),
+            Subject(id = 3, subjectName = "TALLER DE DESARROLLO MÓVIL PARA WINDOWS", partialGrades = listOf(10.0f, 8.0f, 9.0f)),
+            Subject(id = 4, subjectName = "FUNDAMENTOS DE REDES Y RUTEO", partialGrades = listOf(9.2f, 8.2f, 9.5f)),
+            Subject(id = 5, subjectName = "SERVIDORES PARA EL DESARROLLO DE SOFTWARE", partialGrades = listOf(4.9f, 7.8f, 9.8f)),
+            Subject(id = 6, subjectName = "RELIGIÓN, CULTURA Y TRASCENDENCIA", partialGrades = listOf(8.3f, 8.0f, 10.0f)),
+            Subject(id = 7, subjectName = "LENGUA EXTRANJERA III - INGLÉS IV", partialGrades = listOf(5.9f, 6.2f, 10.0f))
         ),
         pastSemesters = listOf(0f),
         tution = listOf(
-            // Primer grupo de 5 estudiantes (Periodo AGO-DIC 2024)
             Tuition(
                 1,
-                "PRIMER HOLA MUNDO",
+                "PRIMER PAGO",
                 "agosto 16 de 2024",
-                "57 - AGO-DIC 2024",
+                "AGO-DIC 2024",
                 15000,
                 true,
                 "CPAL00020769"
@@ -136,7 +108,7 @@ val studentsList = listOf(
                 2,
                 "SEGUNDO PAGO",
                 "septiembre 16 de 2024",
-                "57 - AGO-DIC 2024",
+                "AGO-DIC 2024",
                 15000,
                 false,
                 "CPAL00020770"
@@ -145,7 +117,7 @@ val studentsList = listOf(
                 3,
                 "TERCER PAGO",
                 "octubre 16 de 2024",
-                "57 - AGO-DIC 2024",
+                "AGO-DIC 2024",
                 15000,
                 false,
                 "CPAL00020771"
@@ -154,7 +126,7 @@ val studentsList = listOf(
                 4,
                 "CUARTO PAGO DE COLEGIATURA",
                 "noviembre 16 de 2024",
-                "57 - AGO-DIC 2024",
+                "AGO-DIC 2024",
                 15000,
                 true,
                 "CPAL00020772"
@@ -163,11 +135,56 @@ val studentsList = listOf(
                 5,
                 "QUINTO PAGO DE COLEGIATURA",
                 "diciembre 16 de 2024",
-                "57 - AGO-DIC 2024",
+                "AGO-DIC 2024",
                 15000,
                 true,
                 "CPAL00020773"
             ),
         )
-    ),
+    )
 )
+
+val tuitionList = listOf(
+    Tuition(
+        1,
+        "PRIMER PAGO",
+        "agosto 16 de 2024",
+        "57 - AGO-DIC 2024",
+        15000,
+        true,
+        "CPAL00020769"
+    ), Tuition(
+        2,
+        "SEGUNDO PAGO",
+        "septiembre 16 de 2024",
+        "57 - AGO-DIC 2024",
+        15000,
+        true,
+        "CPAL00020770"
+    ), Tuition(
+        3,
+        "TERCER PAGO",
+        "octubre 16 de 2024",
+        "AGO-DIC 2024",
+        15000,
+        true,
+        "CPAL00020771"
+    ), Tuition(
+        4,
+        "CUARTO PAGO",
+        "noviembre 16 de 2024",
+        "AGO-DIC 2024",
+        15000,
+        true,
+        "CPAL00020772"
+    ), Tuition(
+        5,
+        "QUINTO PAGO",
+        "diciembre 16 de 2024",
+        "AGO-DIC 2024",
+        15000,
+        true,
+        "CPAL00020773"
+    ),
+    )
+

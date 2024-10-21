@@ -17,15 +17,14 @@ import coil.compose.AsyncImage
 import com.example.a512lasalleapp.ui.utils.newsList
 
 @Composable
-fun NewsDetailScreen(newsId:Int,innerPadding : PaddingValues){
-    val news = newsList.first { it.id == newsId }
-
+fun NewsDetailScreen(newsId: Int, innerPadding: PaddingValues){
+    val news = newsList.first {it.id == newsId}
     Column(
         modifier = Modifier
-        .padding(innerPadding)
-        .fillMaxSize(),
+            .padding(innerPadding)
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         AsyncImage(
             model = news.image,
             contentDescription = news.title,
@@ -35,7 +34,8 @@ fun NewsDetailScreen(newsId:Int,innerPadding : PaddingValues){
         )
         Text(
             text = news.title,
-            modifier = Modifier.padding(horizontal = 16.dp),
+            modifier = Modifier
+                .padding(horizontal = 16.dp),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.W900
         )

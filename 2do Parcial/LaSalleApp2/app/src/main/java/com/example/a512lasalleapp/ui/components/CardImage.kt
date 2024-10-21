@@ -17,11 +17,13 @@ import com.example.a512lasalleapp.models.News
 import com.example.a512lasalleapp.ui.utils.newsList
 
 @Composable
-fun CardImage(news: News, onClick : (News)->Unit){
+fun CardImage(news: News, onClick: (News)->Unit) {
     Card(
-        modifier = Modifier.fillMaxWidth().clickable {
-            onClick(news)
-        }
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable {
+                onClick(news)
+            }
     ) {
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
@@ -29,7 +31,9 @@ fun CardImage(news: News, onClick : (News)->Unit){
                 .data(news.image)
                 .build(),
             contentDescription = "CardImage",
-            modifier = Modifier.fillMaxWidth().height(250.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp),
             contentScale = ContentScale.Crop
         )
     }
@@ -37,9 +41,8 @@ fun CardImage(news: News, onClick : (News)->Unit){
 
 @Preview
 @Composable
-fun CardImagePreview(){
-    CardImage(news = newsList[0]){ news->
-        println(news.title)
-        //navegacion
+fun CardImagePreview() {
+    CardImage(news = newsList[0]){ news ->
+
     }
 }

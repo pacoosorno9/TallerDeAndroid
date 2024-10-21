@@ -25,13 +25,16 @@ fun DayItem(){
             .padding(4.dp)
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Text(text = "1")
             Box(
-                modifier = Modifier.size(8.dp).background(Color.Red, shape = CircleShape)
+                modifier = Modifier
+                    .size(8.dp)
+                    .background(Color.Red, shape = CircleShape)
             ) {
 
             }

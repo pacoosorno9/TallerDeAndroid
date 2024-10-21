@@ -28,7 +28,7 @@ fun SubjectItem(subject: Subject, onClick: () -> Unit) {
         }
         Spacer(modifier = Modifier.width(16.dp))
         Button(onClick = onClick) {
-            Text(text = "View Details")
+            Text(text = "Ver detalles")
         }
     }
 }
@@ -44,7 +44,7 @@ fun Subject.semesterAverage(): Float {
 fun SubjectItemPreview() {
     val sampleSubject = Subject(
         id = 1,
-        subjectName = "Mathematics",
+        subjectName = "Programacion",
         partialGrades = listOf(9.0f, 8.5f, 9.2f)
     )
     SubjectItem(subject = sampleSubject, onClick = {

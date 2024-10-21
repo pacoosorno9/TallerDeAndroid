@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -29,30 +30,19 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.a512lasalleapp.ui.screens.CalendarScreen
-import com.example.a512lasalleapp.ui.screens.GradesScreen
-import com.example.a512lasalleapp.ui.screens.HomeScreen
-import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
-import com.example.lasalleapp.ui.screens.SettingsScreen
+import com.example.a512lasalleapp.ui.screens.*
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.bottomNavBarItems
 import com.exyte.animatednavbar.AnimatedNavigationBar
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
-import android.content.Context
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.navigation.NavController
 import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.models.Subject
+import com.example.a512lasalleapp.ui.utils.studentsList
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import com.example.a512lasalleapp.ui.screens.PasswordScreen
-import com.example.a512lasalleapp.ui.screens.PaymentsScreen
-import com.example.a512lasalleapp.ui.screens.ReceptionScreen
-import com.example.a512lasalleapp.ui.screens.ThemeScreen
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
-import com.example.a512lasalleapp.ui.utils.studentsList
-import com.example.a512lasalleapp.ui.screens.SubjectScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +60,10 @@ class MainActivity : ComponentActivity() {
                 Screens.Calendar.route
             )
 
-            _512LaSalleAppTheme {
+            val studentEmail = "jom77268@lasallebajio.edu.mx"
+            val student = studentsList.find { it.institutionalEmail == studentEmail }
+
+            LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
                 Scaffold(
@@ -123,36 +116,15 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route) {
-                            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
-                            val studentEmail = sharedPreferences.getString("studentEmail", "")
-                            val student = studentsList.find { it.institutionalEmail == studentEmail }
                             if (student != null) {
                                 GradesScreen(navController, innerPadding = innerPadding, student = student)
+                            } else {
+                                Text("No se encontraron datos del estudiante.")
                             }
                         }
                         composable(route = Screens.Settings.route) {
-                            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
-                            val studentEmail = sharedPreferences.getString("studentEmail", "")
-                            val student = studentsList.find { it.institutionalEmail == studentEmail }
                             if (student != null) {
                                 SettingsScreen(innerPadding = innerPadding, student = student, navController)
-                            }
-                        }
-                        composable(route = Screens.Reception.route) {
-                            ReceptionScreen(innerPadding = innerPadding)
-                        }
-                        composable(route = Screens.Password.route) {
-                            PasswordScreen(innerPadding = innerPadding)
-                        }
-                        composable(route = Screens.Theme.route) {
-                            ThemeScreen(innerPadding = innerPadding)
-                        }
-                        composable(route = Screens.Payments.route) {
-                            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
-                            val studentEmail = sharedPreferences.getString("studentEmail", "")
-                            val student = studentsList.find { it.institutionalEmail == studentEmail }
-                            if (student != null) {
-                                PaymentsScreen(innerPadding = innerPadding, navController = navController, student = student)
                             }
                         }
                         composable(route = Screens.NewsDetail.route + "/{id}", arguments = listOf(navArgument("id") { type = NavType.IntType })) {
@@ -161,14 +133,17 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.Subject.route + "/{subjectId}", arguments = listOf(navArgument("subjectId") { type = NavType.IntType })) { backStackEntry ->
                             val subjectId = backStackEntry.arguments?.getInt("subjectId") ?: 0
-                            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
-                            val studentEmail = sharedPreferences.getString("studentEmail", "")
-                            val student = studentsList.find { it.institutionalEmail == studentEmail }
                             val subject = student?.subjects?.find { it.id == subjectId }
 
                             if (subject != null) {
                                 SubjectScreen(subject = subject, innerPadding)
                             }
+                        }
+                        composable(route = Screens.Password.route) {
+                            PasswordScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.Theme.route) {
+                            PasswordScreen(innerPadding = innerPadding)
                         }
                     }
                 }

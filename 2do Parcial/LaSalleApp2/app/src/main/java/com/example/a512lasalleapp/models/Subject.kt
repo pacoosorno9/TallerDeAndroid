@@ -5,7 +5,7 @@ data class Subject(
     val subjectName: String,
     val partialGrades: List<Float>
 ) {
-    // PROMEDIO
+    // Cálculo de promedio del semestre
     val semesterAverage: Float
         get() = if (partialGrades.isNotEmpty()) {
             partialGrades.average().toFloat()

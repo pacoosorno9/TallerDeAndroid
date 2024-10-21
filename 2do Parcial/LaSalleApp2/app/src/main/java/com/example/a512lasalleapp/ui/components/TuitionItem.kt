@@ -25,10 +25,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.a512lasalleapp.models.Tuition
 import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.models.Subject
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.models.Tuition
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 
 @Composable
@@ -184,8 +184,7 @@ fun TuitionItemPreview() {
         folio = "CPAL00020789"
     )
     val navController = rememberNavController()
-    _512LaSalleAppTheme {
+    LaSalleAppTheme {
         TutionItem(navController = navController, tuition = tuition )
     }
 }
-

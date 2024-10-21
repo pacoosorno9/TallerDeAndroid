@@ -19,12 +19,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
+import com.example.a512lasalleapp.models.Student
+import com.example.a512lasalleapp.models.Subject
+import com.example.a512lasalleapp.ui.theme.LaSalleAppTheme
 
 @Composable
 fun PasswordScreen(innerPadding: PaddingValues) {
+//fun PasswordScreen(innerPadding: PaddingValues, navController: NavController, student: Student, onPasswordChange: (Student) -> Unit) {
     var newPassword by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+    var showError by remember { mutableStateOf(false) }
+    var showSuccess by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -51,8 +56,26 @@ fun PasswordScreen(innerPadding: PaddingValues) {
             singleLine = true
         )
         Spacer(modifier = Modifier.height(16.dp))
+        if (showError) {
+            Text(text = "Las contraseñas no coinciden", color = Color.Red)
+        }
+        if (showSuccess) {
+            Text(text = "Contraseña cambiada exitosamente", color = Color.Green)
+        }
+
         Button(
-            onClick = { /* Acción del botón */ },
+            onClick = {
+//                if (newPassword == confirmPassword && newPassword.isNotBlank()) {
+//                    val updatedStudent = student.copy(password = newPassword)
+//                    onPasswordChange(updatedStudent)
+//                    showError = false
+//                    showSuccess = true
+//                    navController.popBackStack()
+//                } else {
+//                    showError = true
+//                    showSuccess = false
+//                }
+            },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Guardar Contraseña")
@@ -65,9 +88,30 @@ fun PasswordScreen(innerPadding: PaddingValues) {
 fun PreviewPasswordScreen() {
     val navController = rememberNavController()
 
-    _512LaSalleAppTheme {
+    // Crear un estudiante de ejemplo
+    val student = Student(
+        id = 1,
+        fullName = "Alice Johnson",
+        dateOfBirth = "2001-01-10",
+        institutionalEmail = "alice.johnson@university.edu",
+        career = "ISSC",
+        photo = "R.drawable.studen_1",
+        currentSemester = "1",
+        subjects = emptyList(), // Puedes dejar esto vacío o agregar ejemplos
+        pastSemesters = listOf(0f),
+        tution = emptyList() // También puedes dejar esto vacío si no es relevante
+    )
+
+    LaSalleAppTheme {
         PasswordScreen(
-            innerPadding = PaddingValues()
+            innerPadding = PaddingValues(),
+//            navController = navController,
+//            student = student,
+//            onPasswordChange = { updatedStudent ->
+//                // Aquí podrías manejar el estudiante actualizado si es necesario
+//            }
         )
     }
 }
+
+

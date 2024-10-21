@@ -48,6 +48,8 @@ import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.Task
 import com.example.a512lasalleapp.ui.utils.communities
 import com.example.a512lasalleapp.ui.utils.newsList
+import okhttp3.FormBody
+import okhttp3.internal.http2.Header
 
 @Composable
 fun ScreenTemplate(
@@ -55,7 +57,6 @@ fun ScreenTemplate(
     header: @Composable ()->Unit,
     body: @Composable () -> Unit
 ) {
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -65,18 +66,25 @@ fun ScreenTemplate(
                 rememberScrollState()
             )
     ) {
-        // Header
+
+        // HEADER
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(bottomStart = 60.dp, bottomEnd = 60.dp))
+                .clip(
+                    RoundedCornerShape(
+                        bottomStart = 60.dp,
+                        bottomEnd = 60.dp
+                    )
+                )
                 .height(270.dp)
                 .background(MaterialTheme.colorScheme.primary)
         ) {
             header()
         }
 
-        // Body
+
+        // BODY
         Box(
             modifier = Modifier
                 .fillMaxSize()

@@ -1,5 +1,6 @@
 package com.example.a512lasalleapp.ui.screens
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -55,7 +56,10 @@ import com.example.a512lasalleapp.ui.utils.communities
 import com.example.a512lasalleapp.ui.utils.newsList
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
+fun HomeScreen(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    context: Context? = null,) {
 
     Column(
         modifier = Modifier

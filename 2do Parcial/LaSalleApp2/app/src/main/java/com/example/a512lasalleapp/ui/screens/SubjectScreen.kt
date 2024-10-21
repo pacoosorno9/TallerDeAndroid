@@ -1,4 +1,4 @@
-package com.example.a512lasalleapp.ui.components
+package com.example.a512lasalleapp.ui.screens
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
